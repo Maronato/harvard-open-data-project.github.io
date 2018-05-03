@@ -13,21 +13,16 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                {% for link in site.data.pages.main %}
-                <li
-                {% if link.url == page.url %}
-                class="active"
-                {% endif %}
-                >
-                {% if link.name == 'Blog' or link.name == 'GitHub' %}
-                <a href="{{link.url}}">
-                    {{link.name}}
-                {% else %}
-                <a href="{{ site.baseurl }}{{link.url}}">
-                    {{link.name}}
-                {% endif %}
-                </a>
-            </li>
+              {% for link in site.data.pages.main %}
+              <li
+              {% if link.url == page.url %}
+              class="active"
+              {% endif %}
+              >
+              <a href="{{link.url}}">
+                  {{link.name}}
+              </a>
+          </li>
             {% endfor %}
             {% if site.data.pages.more %}
             <li class="dropdown">
@@ -36,13 +31,8 @@
                     <ul class="dropdown-menu">
                         {% for link in site.data.pages.more %}
                         <li>
-                            {% if link.name == 'Blog' or link.name == 'GitHub' %}
                             <a href="{{link.url}}">
                                 {{link.name}}
-                            {% else %}
-                            <a href="{{ site.baseurl }}{{link.url}}">
-                                {{link.name}}
-                            {% endif %}
                             </a>
                         </li>
                         {% endfor %}
@@ -52,4 +42,4 @@
             </ul>
         </div><!--/.nav-collapse -->
     </div>
-</nav>
+  </nav>
